@@ -71,7 +71,32 @@ def solution2():
 
 # ноутбук
 #     12
+def solution3():
+    text  = input("Input a word ").upper()
+    points = 0
+    points_dict = {0:1,
+                   1:2,
+                   2:3,
+                   3:4,
+                   4:5,
+                   5:8,
+                   6:10}
+    
+    lst_Eng = [['A', 'E', 'I', 'O', 'U', 'L', 'N', 'S', 'T', 'R', 'А', 'В', 'Е', 'И', 'Н', 'О', 'Р', 'С', 'Т'],
+               ['D', 'G', 'Д', 'К', 'Л', 'М', 'П', 'У'],
+               ['B', 'C', 'M', 'P', 'Б', 'Г', 'Ё', 'Ь', 'Я'],
+               ['F', 'H', 'V', 'W', 'Y', 'Й', 'Ы'],
+               ['K', 'Ж', 'З', 'Х', 'Ц', 'Ч'],
+               ['J', 'X', 'Ш', 'Э', 'Ю'],
+               ['Q', 'Z', 'Ф', 'Щ', 'Ъ']]
 
-
+    text_list = list(text)
+    for i in range(len(lst_Eng)):
+        for k in range(len(lst_Eng[i])):
+            for j in range(len(text_list)):
+                if text_list[j] == lst_Eng[i][k]:
+                    points += points_dict[i]
+    print(points)
 # solution1()
-solution2()
+# solution2()
+solution3()
