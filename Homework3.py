@@ -12,10 +12,15 @@
 def solution1():
     from random import randint
     size = int(input("Input size of array N = "))
+    # lst = [randint(0, elem+1) for i in range(size)]
+    lst = [0] * size
+    for i in range(len(lst)):
+        lst.append(int(input('Input value of array`s element: ')))
+
     elem = int(input("Input a number X = "))
     count = 0
-    lst = [randint(0, elem+1) for i in range(size)]
-    for i in lst:
+    
+    for i in range(len(lst)):
         if lst[i] == elem:
             count += 1
     print(f" the number X is met {count} times")
@@ -97,6 +102,8 @@ def solution3():
                 if text_list[j] == lst_Eng[i][k]:
                     points += points_dict[i]
     print(points)
-# solution1()
+
+# ====================================================
+solution1()
 # solution2()
-solution3()
+# solution3()
