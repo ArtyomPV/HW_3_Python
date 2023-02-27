@@ -9,6 +9,16 @@
 #     1 2 3 4 5
 #     3
 #     -> 1
+def solution1():
+    from random import randint
+    size = int(input("Input size of array N = "))
+    elem = int(input("Input a number X = "))
+    count = 0
+    lst = [randint(0, elem+1) for i in range(size)]
+    for i in lst:
+        if lst[i] == elem:
+            count += 1
+    print(f" the number X is met {count} times")
 
 # =====================================================================================================
 # Задача 18: Требуется найти в массиве A[1..N] самый близкий по величине элемент к заданному числу X. 
@@ -36,3 +46,5 @@
 # ноутбук
 #     12
 
+
+    solution1()
