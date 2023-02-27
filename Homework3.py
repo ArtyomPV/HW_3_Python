@@ -31,6 +31,32 @@ def solution1():
 #     1 2 3 4 5
 #     6
 #     -> 5
+def check_valid_int(text):
+    num = (input(text))
+    while type(num) != int:
+        try:
+            num = int(num)
+        except ValueError:
+            print("Inputed  not integer number") 
+            num = (input(text))
+    return num
+def solution2():
+    
+    from random import randint
+    size = check_valid_int("Input size of array N = ")
+    elem = check_valid_int("Input a number X = ")
+    lst = [e for e in range(size)]
+    print(lst)
+    closest = lst[0]
+    for i in range(1, len(lst)):
+        if elem == lst[i]:
+            closest = lst[i]
+        elif elem > lst[i] and lst[i] > lst[i-1]:
+            closest = lst[i]
+        elif elem > lst[i] and lst[i] < lst[i-1]:
+            closest = lst[i-1]
+    print(closest)
+    
 # =====================================================================================================
 # *Задача 20: * В настольной игре Скрабл (Scrabble) каждая буква имеет определенную ценность.
 # В случае с английским алфавитом очки распределяются так:A, E, I, O, U, L, N, S, T, R – 1 очко;
@@ -47,4 +73,5 @@ def solution1():
 #     12
 
 
-    solution1()
+# solution1()
+solution2()
